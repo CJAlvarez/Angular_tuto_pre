@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md">
+	<button class="navbar-toggler navbar-toggler-right" type="button" datatoggle="collapse" data-target="#containerNavbar" ariacontrols="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="#">Compras App</a>
+	<div class="collapse navbar-collapse" id="containerNavbar">
+		<ul class="navbar-nav mr-auto w-100 justify-content-end">
+
+			<!-- Inicio -->
+			<li  routerLinkActive="active-link"	[routerLinkActiveOptions]="{exact: true}">
+				<a routerLink="/">Inicio</a>
+			</li>
+
+			<!-- Proveedores -->
+			<li routerLinkActive="active-link">
+				<a routerLink="/proveedores">Proveedores</a>
+			</li>
+
+		</ul>
+	</div>
+</nav>
