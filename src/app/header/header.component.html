@@ -4,18 +4,17 @@
 	</button>
 	<a class="navbar-brand" href="#">Compras App</a>
 	<div class="collapse navbar-collapse" id="containerNavbar">
-		<ul class="navbar-nav mr-auto w-100 justify-content-end">
-
-			<!-- Inicio -->
-			<li  routerLinkActive="active-link"	[routerLinkActiveOptions]="{exact: true}">
-				<a routerLink="/">Inicio</a>
-			</li>
-
-			<!-- Proveedores -->
-			<li routerLinkActive="active-link">
-				<a routerLink="/proveedores">Proveedores</a>
-			</li>
-
-		</ul>
-	</div>
+		<ul class="nav navbar-nav mr-auto w-100 justify-content-end navbar-right">
+			<li class="nav-item" routerLinkActive="active"
+			[routerLinkActiveOptions]="{exact:true}">
+			<a routerLink="/" >Inicio </a>
+		</li>
+		<li class="nav-item"routerLinkActive="active">
+			<a routerLink="/proveedores">Proveedores</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a routerLink="/addpres">Añadir Presupuesto</a>
+		</li>
+	</ul>
+</div>
 </nav>

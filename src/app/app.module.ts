@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import {Routes, RouterModule } from '@angular/router';
 
 // Componentes
@@ -10,6 +11,7 @@ import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
 import { AddproveeComponent } from './proveedores/addprovee/addprovee.component';
+import { AddpresComponent } from './presupuestos/addpres/addpres.component';
 
 // Servicios
 import { ProveedoresService } from './servicios/proveedores.service';
@@ -21,6 +23,7 @@ const routes: Routes = [
 {path: '', component: InicioComponent},
 {path:'proveedores', component: ProveedoresComponent},
 {path:'addprovee', component: AddproveeComponent},
+{path:'addpres', component: AddpresComponent},
 {path:'**', component: NotFoundComponent}
 ];
 
@@ -31,12 +34,14 @@ const routes: Routes = [
 	InicioComponent,
 	NotFoundComponent,
 	HeaderComponent,
-	AddproveeComponent
+	AddproveeComponent,
+	AddpresComponent
 	],
 	imports: [
 	BrowserModule,
 	RouterModule.forRoot(routes),
-	FormsModule
+	FormsModule,
+	ReactiveFormsModule
 	],
 	providers: [
 	ProveedoresService
