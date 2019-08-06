@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {Routes, RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ import { AddpresComponent } from './presupuestos/addpres/addpres.component';
 
 // Servicios
 import { ProveedoresService } from './servicios/proveedores.service';
+import { PresupuestosService } from './servicios/presupuestos.service';
 
 // Modulos
 
@@ -41,10 +43,12 @@ const routes: Routes = [
 	BrowserModule,
 	RouterModule.forRoot(routes),
 	FormsModule,
-	ReactiveFormsModule
+	ReactiveFormsModule,
+	HttpModule
 	],
 	providers: [
-	ProveedoresService
+	ProveedoresService,
+	PresupuestosService
 	],
 	bootstrap: [AppComponent]
 })

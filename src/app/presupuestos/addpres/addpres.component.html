@@ -24,81 +24,85 @@
 		
 		<!-- Fecha -->
 		<div class="form-group">
-				<label for="fecha">Fecha presupuesto</label>
-				<i class="fa fa-check-circle check"
-				*ngIf="presupuestoForm.controls.fecha.valid"></i>
-				<i class="fa fa-exclamation-circle uncheck"
-				*ngIf="presupuestoForm.controls.fecha.invalid &&
-				presupuestoForm.controls.fecha.touched"></i>
-				<input type="date"
-				class="form-control"
-				id="fecha"
-				formControlName="fecha">
-				<p class="alert alert-danger"
-				*ngIf="presupuestoForm.controls.fecha.invalid &&
-				presupuestoForm.controls.fecha.touched">
-				El campo Fecha Presupuesto es obligatorio.
-			</p>
-		</div>
-		
-		<!-- Concepto -->
-		<div class="form-group">
-			<label for="concepto">Concepto</label>
-			<input type="text"
-			formControlName="concepto"
+			<label for="fecha">Fecha presupuesto</label>
+			<i class="fa fa-check-circle check"
+			*ngIf="presupuestoForm.controls.fecha.valid"></i>
+			<i class="fa fa-exclamation-circle uncheck"
+			*ngIf="presupuestoForm.controls.fecha.invalid &&
+			presupuestoForm.controls.fecha.touched"></i>
+			<input type="date"
 			class="form-control"
-			id="concepto">
-		</div>
-		
-			<!-- Base -->
-		<div class="form-group">
-			<label for="base">Base Imponible</label>
-			<input type="number"
-			formControlName="base"
-			class="form-control"
-			id="base">
-		</div>
-		
-			<!-- Tipo -->
-		<div class="form-group">
-			<label for="tipo">Tipo de IVA</label>
-			<select class="form-control" id="tipo" formControlName="tipo">
-				<option value="">Seleccione...</option>
-				<option value=0> 0 %</option>
-				<option value=0.04> 4 %</option>
-				<option value=0.10>10 %</option>
-				<option value=0.21>21 %</option>
-			</select>
-		</div>
-		
-			<!-- Iva -->
-		<div class="form-group">
-			<label for="iva">Importe IVA</label>
-			<input type="number"
-			formControlName="iva"
-			class="form-control"
-			id="iva">
-		</div>
-		
-			<!-- Total -->
-		<div class="form-group">
-			<label for="total">Total Factura IVA Incluido</label>
-			<input type="number"
-			formControlName="total"
-			class="form-control"
-			id="total">
-		</div>
-		
-			<!-- Submit -->
-		<button type="submit"
-		class="btn btn-primary"
-		[disabled]="!presupuestoForm.valid"
-		>Añadir Presupuesto</button>
-		<p class="alert alert-danger" *ngIf="!presupuestoForm.valid">
-			Por favor complete todos los campos
-		</p> 
-		<pre>Valor del formulario: {{ presupuestoForm.value | json }}</pre>
-		<pre>Status del formulario: {{ presupuestoForm.status | json }}</pre>
-	</form>
+			id="fecha"
+			formControlName="fecha">
+			<p class="alert alert-danger"
+			*ngIf="presupuestoForm.controls.fecha.invalid &&
+			presupuestoForm.controls.fecha.touched">
+			El campo Fecha Presupuesto es obligatorio.
+		</p>
+	</div>
+	
+	<!-- Concepto -->
+	<div class="form-group">
+		<label for="concepto">Concepto</label>
+		<input type="text"
+		formControlName="concepto"
+		class="form-control"
+		id="concepto">
+	</div>
+	
+	<!-- Base -->
+	<div class="form-group">
+		<label for="base">Base Imponible</label>
+		<input type="number"
+		formControlName="base"
+		class="form-control"
+		id="base">
+	</div>
+	
+	<!-- Tipo -->
+	<div class="form-group">
+		<label for="tipo">Tipo de IVA</label>
+		<select class="form-control" id="tipo" formControlName="tipo">
+			<option value="">Seleccione...</option>
+			<option value=0> 0 %</option>
+			<option value=0.04> 4 %</option>
+			<option value=0.10>10 %</option>
+			<option value=0.21>21 %</option>
+		</select>
+	</div>
+	
+	<!-- Iva -->
+	<div class="form-group">
+		<label for="iva">Importe IVA</label>
+		<input type="number"
+		class="form-control"
+		id="iva"
+		formControlName="iva"
+		[(ngModel)]="presupuestoForm.value.iva"
+		>
+	</div>
+	
+	<!-- Total -->
+	<div class="form-group">
+		<label for="total">Total Factura IVA Incluido</label>
+		<input type="number"
+		class="form-control"
+		id="total"
+		formControlName="total"
+		[(ngModel)]="presupuestoForm.value.total"
+		>
+	</div>
+	
+	<!-- Submit -->
+	<button type="submit"
+	class="btn btn-primary"
+	[disabled]="!presupuestoForm.valid"
+	>Añadir Presupuesto</button>
+	<p class="alert alert-danger" *ngIf="!presupuestoForm.valid">
+		Por favor complete todos los campos
+	</p> 
+	<pre>Valor del formulario: {{ presupuestoForm.value | json }}</pre>
+	<pre>Status del formulario: {{ presupuestoForm.status | json }}</pre>
+</form>
 </div>
 </div>
