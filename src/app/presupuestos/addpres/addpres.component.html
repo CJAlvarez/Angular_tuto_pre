@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset 2">
 		<h2>Añadir nuevo presupuesto</h2>
-		<form [formGroup]="presupuestoForm">
+		<form [formGroup]="presupuestoForm" (ngSubmit)="onSubmit()">
 			
 			<!-- Proveedor -->
 			<div class="form-group">
@@ -79,6 +79,7 @@
 		id="iva"
 		formControlName="iva"
 		[(ngModel)]="presupuestoForm.value.iva"
+		disabled 
 		>
 	</div>
 	
@@ -90,6 +91,7 @@
 		id="total"
 		formControlName="total"
 		[(ngModel)]="presupuestoForm.value.total"
+		disabled
 		>
 	</div>
 	

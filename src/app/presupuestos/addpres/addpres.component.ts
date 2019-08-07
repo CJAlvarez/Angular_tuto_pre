@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {PresupuestosService} from '../../servicios/presupuestos.service';
+import { PresupuestosService } from '../../servicios/presupuestos.service';
 
 
 @Component({
@@ -8,6 +8,7 @@ import {PresupuestosService} from '../../servicios/presupuestos.service';
 	templateUrl: './addpres.component.html',
 	styleUrls: ['./addpres.component.css']
 })
+
 export class AddpresComponent implements OnInit {
 
 	presupuestoForm: FormGroup;
@@ -35,8 +36,9 @@ export class AddpresComponent implements OnInit {
 	}
 
 	onSubmit() {
+		console.log("asdasdasdasdasdasd");
+		
 		this.presupuesto = this.savePresupuesto();
-		console.log(this.presupuesto);
 		this.presupuestoService.postPresupuesto( this.presupuesto )
 		.subscribe(newpres => {
 		})
